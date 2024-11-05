@@ -26,7 +26,7 @@ The EDA phase focused on understanding the dataset, uncovering patterns, and ide
 To identify and mitigate multicollinearity (highly correlated predictor variables) that could impact model stability:
 
 1. **Correlation Heatmap:** A correlation heatmap was created to visually inspect relationships between variables. This helped identify pairs of features with high correlations.
-2. **Variance Inflation Factor (VIF):** We calculated the VIF for each predictor variable. Variables with high VIF values (>5) were considered highly collinear.
+2. **Variance Inflation Factor (VIF):** We calculated the VIF for each predictor variable. Variables with high VIF values (>10) were considered highly collinear.
 3. **Feature Selection:** Based on VIF values, we dropped or transformed some variables to reduce multicollinearity, ensuring more reliable coefficient estimates in our logistic regression model.
 
 ## Model Building
@@ -66,3 +66,27 @@ We visualized the most important features for both models to gain insights into 
 
 The visualizations provided actionable insights into which factors most strongly influence churn behavior, supporting business decisions on customer retention strategies.
 
+## Insights and Strategy Contribution
+Based on the findings from our customer churn model, several insights have emerged that can guide strategic actions for the telecom company to retain high-value customers:
+
+**1. Key Churn Indicators:**
+
+- **Recharge Amounts and Usage Patterns:** The model indicates that churners tend to have lower average recharge amounts and lower call or data usage in recent months. This trend suggests that customers may be disengaging with the service before fully churning.
+- **Roaming and International Usage:** High usage of roaming and international call minutes (as shown in the Random Forest feature importance) appears to be a significant churn indicator. Customers with high roaming usage might be at risk if they find better international plans elsewhere.
+- **Last Interaction Metrics:** Features such as last recharge amount and frequency of recent transactions have strong predictive power. Customers who have lower recharges in the most recent months may signal a risk of disengagement.
+
+**2. Segmented Retention Strategies:**
+
+- **Low Recharge and Low Usage Customers:** For customers identified with low recharge and usage patterns, offering personalized incentives such as bonus minutes, additional data, or limited-time discounts could encourage continued engagement.
+- **High Roaming Customers:** For customers with high roaming or international usage, targeted offers that provide better roaming rates or international calling plans can increase loyalty and reduce the likelihood of churn.
+- **Infrequent Rechargers:** Customers who recharge infrequently might benefit from reminders or special offers before they are due for recharge, potentially preventing disengagement.
+
+**3. Proactive Customer Engagement:**
+
+- **Predictive Alerts for At-Risk Customers:** Implement an early warning system based on the model's churn probabilities to flag high-risk customers. Customer service teams can proactively reach out to these customers to offer tailored retention plans or solve potential pain points.
+- **Loyalty Programs:** Offer loyalty points or rewards for long-standing customers or those with high usage, especially among the features identified as churn drivers. Rewarding loyalty can improve customer satisfaction and reduce the likelihood of churn among high-value customers.
+
+**4. Product and Service Improvements:**
+
+- **Enhanced Data and Voice Plans:** Based on the significant influence of usage features, the company could develop data and voice plans that better fit the needs of its customer base, particularly addressing patterns of high roaming or domestic usage.
+- **Feedback Collection:** For customers identified as high-risk, collect feedback on what improvements or additional features they would like. Understanding customer needs could help reduce churn by adapting services accordingly.
